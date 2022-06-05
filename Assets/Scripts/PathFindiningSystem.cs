@@ -206,7 +206,7 @@ namespace PathFinding
 					dstPosition = currentRequest.dst,
 					grid = grid.Copy(Allocator.TempJob),
 					result = new NativeList<int2>(Allocator.TempJob),
-					open = new NativeBinaryHeap<ProcessPathJob.NodeCost>((int)(grid.width * grid.height / (grid.nodeSize) / 2), Allocator.TempJob),
+					open = new NativeBinaryHeap<ProcessPathJob.NodeCost>((int)(grid.width * grid.height), Allocator.TempJob),
 					closed = new NativeHashMap<int2, ProcessPathJob.NodeCost>(128, Allocator.TempJob)
 				};
 				jobHandle = job.Schedule();
